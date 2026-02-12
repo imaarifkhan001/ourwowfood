@@ -1,0 +1,101 @@
+/* --- Final Premium Wow Food CSS v3.0 --- */
+
+html { scroll-behavior: smooth; }
+
+/* 1. Pre-loader Styles */
+#preloader {
+    transition: opacity 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.loader-hide { 
+    opacity: 0 !important; 
+    pointer-events: none; 
+}
+
+/* 2. Category & Filter Buttons */
+.category-btn {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+.category-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.3);
+}
+.category-btn.active {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+    border: none !important;
+    box-shadow: 0 10px 15px -3px rgba(239, 68, 68, 0.4);
+    animation: pulse-red 2s infinite;
+}
+@keyframes pulse-red {
+    0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+/* 3. Hero & Food Card Magic */
+@keyframes slowZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+.animate-slow-zoom { animation: slowZoom 15s ease-in-out infinite alternate; }
+
+.food-card { transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.food-card:hover { transform: translateY(-12px); box-shadow: 0 25px 35px -10px rgba(0, 0, 0, 0.12); }
+.food-card img { transition: transform 0.6s ease; }
+.food-card:hover img { transform: scale(1.1) rotate(1deg); }
+
+/* 4. Checkout Button Premium Shimmer */
+.checkout-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: linear-gradient(90deg, #ef4444, #dc2626);
+}
+.checkout-btn::after {
+    content: ''; position: absolute; top: -50%; left: -60%; width: 35%; height: 200%;
+    background: rgba(255, 255, 255, 0.3); transform: rotate(35deg);
+    transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.checkout-btn:hover::after { left: 130%; }
+
+/* 5. Social Proof & Floating WhatsApp */
+#social-proof {
+    position: fixed; bottom: 100px; left: 20px; z-index: 90; display: none;
+    animation: slide-up-proof 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+@keyframes slide-up-proof {
+    from { opacity: 0; transform: translateY(50px) scale(0.9); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes bounce-gentle { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.whatsapp-float { animation: bounce-gentle 2s infinite ease-in-out; }
+
+/* 6. Founder Secret Message Animation */
+.scale-in-center {
+    animation: scale-in-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@keyframes scale-in-center {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* 7. Utility Classes */
+.reveal-item { animation: fadeInUp 0.6s ease forwards; opacity: 0; }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+#cart-count.bump { transform: scale(1.5); }
+.animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+
+/* 8. Responsiveness */
+@media (max-width: 640px) {
+    #cart-sidebar { width: 100% !important; border-radius: 0; }
+    .checkout-btn { padding: 20px !important; border-radius: 12px; font-weight: 800; }
+    #social-proof { bottom: 90px; left: 10px; right: 10px; max-width: none; }
+    #preloader p { font-size: 12px; }
+}
