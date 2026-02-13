@@ -1,2 +1,29 @@
-# ourwowfood
-OurWowFood is a comprehensive food discovery and recipe platform designed to make cooking and finding great food effortless. Whether you're a foodie looking for your next meal or a home chef searching for inspiration, OurWowFood provides a seamless experience with a modern UI.
+# 🍔 Wow Food – Full Stack Food Ordering Website
+
+A complete food ordering web application built using:
+
+## 🚀 Tech Stack
+- PHP
+- MySQL
+- JavaScript
+- Tailwind CSS
+- XAMPP
+
+## ✨ Features
+- User Signup/Login
+- Add to Cart
+- Place Order
+- Order History (My Orders)
+- Session Authentication
+- Responsive UI
+
+## 🖥 Run Locally
+1. Install XAMPP
+2. Copy project to htdocs
+3. Import database
+4. Start Apache + MySQL
+5. Open:
+http://localhost/ourwowfood
+
+## 👨‍💻 Author
+Mohd Aarif Khan
